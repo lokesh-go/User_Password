@@ -1,0 +1,115 @@
+import java.io.*;
+
+   // Input your details..........................
+		
+class Createfile 
+{
+	void details() throws Exception 
+	{
+		System.out.println("\tcreate new file......\n");
+		System.out.print("Please Input file name :-");
+		BufferedReader be=new BufferedReader(new InputStreamReader(System.in));
+		String st=be.readLine();
+		File file=new File(st);
+		PrintWriter pw=new PrintWriter(file);
+		System.out.print("Input your user name :-");
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String s=br.readLine();
+		pw.println(s);
+		System.out.print("Input your Age :-");
+		BufferedReader br1=new BufferedReader(new InputStreamReader(System.in));
+		int x=Integer.parseInt(br1.readLine());
+		pw.println(x);
+		System.out.print("Input your Address :-");
+		BufferedReader br2=new BufferedReader(new InputStreamReader(System.in));
+		String s1=br2.readLine();
+		pw.println(s1);
+		System.out.print("\tYou are successfully create new file and inputed your details....\n");
+		pw.close();
+		
+	}
+
+
+	void Createaccount() throws Exception
+	{
+		System.out.println("\tPlease Input your file name which you want to select......");
+		BufferedReader be1=new BufferedReader(new InputStreamReader(System.in));
+		String st1=be1.readLine();
+		
+		String file2=st1;
+		PrintWriter pw=new PrintWriter(file2);
+		System.out.print("Input your user name :-");
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String s=br.readLine();
+		pw.println(s);
+		System.out.print("Input your Age :-");
+		BufferedReader br1=new BufferedReader(new InputStreamReader(System.in));
+		int x=Integer.parseInt(br1.readLine());
+		pw.println(x);
+		System.out.print("Input your Address :-");
+		BufferedReader br2=new BufferedReader(new InputStreamReader(System.in));
+		String s1=br2.readLine();
+		pw.println(s1);
+		System.out.print("\tYou are suceessfully delete prevoius details and iputed new details..\n");
+		pw.close();
+	}
+
+		
+	void modify() throws Exception
+	{
+		System.out.println("\tPlease Input your file name which you want to select......");
+		BufferedReader be2=new BufferedReader(new InputStreamReader(System.in));
+		String st2=be2.readLine();
+		
+		String file3=st2;
+		FileWriter fw=new FileWriter(file3,true);
+		PrintWriter pw=new PrintWriter(fw);
+		System.out.print("Input your user name :-");
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String s=br.readLine();
+		pw.println(s);
+		System.out.print("Input your Age :-");
+		BufferedReader br1=new BufferedReader(new InputStreamReader(System.in));
+		int x=Integer.parseInt(br1.readLine());
+		pw.println(x);
+		System.out.print("Input your Address :-");
+		BufferedReader br2=new BufferedReader(new InputStreamReader(System.in));
+		String s1=br2.readLine();
+		pw.println(s1);
+		System.out.print("\tYou are successfully add details in your selected file..\n");
+		pw.close();
+	}
+
+
+	public static void main(String[] args) throws Exception
+	{ 
+		int y;
+		System.out.println("\t1. Create new file nd input your details...\n");
+		System.out.println("\t2. Add new details in your file..........\n");
+		System.out.println("\t3. Delete previous details and add new details.............\n");
+		System.out.println("Input your choice :");
+		BufferedReader be=new BufferedReader(new InputStreamReader(System.in));
+		y=Integer.parseInt(be.readLine());
+		switch(y)
+		{
+			case 1:
+		 
+				Createfile cr=new Createfile();
+				cr.details();
+				break;
+			case 2:
+		 
+				Createfile cr1=new Createfile();
+				cr1.modify();
+				break;
+			
+			case 3:
+				Createfile cr2=new Createfile();
+				cr2.Createaccount();
+				break;			
+			default:
+				System.out.println("\twrong choice.........\n");
+				break;
+		}
+	}
+}
